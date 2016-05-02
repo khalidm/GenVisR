@@ -79,13 +79,14 @@ waterfall_align2 <- function(p1)
     gB$heights[2:5] <- as.list(maxheight)
 
     # plot the grobs with grid.arrange
-    if(!missing(p1))
-    {
-        #p1 <- gridExtra::arrangeGrob(blankPanel, gB, blankPanel, ncol=1, nrow=1, widths=c(.8,4), heights=c(1,4,1.2))
-        p1 <- gridExtra::arrangeGrob(blankPanel, gB, blankPanel, ncol=1, nrow=1)
-    } else {
-        p1 <- gridExtra::arrangeGrob(blankPanel, gB, blankPanel, ncol=1, nrow=1)
-    }
+    p1 <- gB
+    #if(!missing(p1))
+    #{
+    #    #p1 <- gridExtra::arrangeGrob(blankPanel, gB, blankPanel, ncol=1, nrow=1, widths=c(.8,4), heights=c(1,4,1.2))
+    #    p1 <- gridExtra::arrangeGrob(blankPanel, gB, blankPanel, ncol=1, nrow=1)
+    #} else {
+    #    p1 <- gridExtra::arrangeGrob(blankPanel, gB, blankPanel, ncol=1, nrow=1)
+    #}
 
     return(p1)
 }
