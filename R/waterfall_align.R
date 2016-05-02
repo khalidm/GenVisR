@@ -65,7 +65,7 @@ waterfall_align2 <- function(p1)
     blankPanel <- grid::grid.rect(gp=grid::gpar(col="white"))
 
     # Adjust the grob widths so p1 and p3 plots line up
-    if(!missing(p4))
+    if(!missing(p1))
     {
         maxwidth = grid::unit.pmax(gB$widths[2:5,])
         gB$widths[2:5] <- as.list(maxwidth)
@@ -79,7 +79,7 @@ waterfall_align2 <- function(p1)
     gB$heights[2:5] <- as.list(maxheight)
 
     # plot the grobs with grid.arrange
-    if(!missing(p4))
+    if(!missing(p1))
     {
         p1 <- gridExtra::arrangeGrob(blankPanel, gB, blankPanel, ncol=1, nrow=1, widths=c(.8,4), heights=c(1,4,1.2))
     } else {
