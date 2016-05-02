@@ -82,9 +82,9 @@ waterfall_align2 <- function(p1)
     if(!missing(p1))
     {
         #p1 <- gridExtra::arrangeGrob(blankPanel, gB, blankPanel, ncol=1, nrow=1, widths=c(.8,4), heights=c(1,4,1.2))
-        p1 <- gridExtra::arrangeGrob(blankPanel, gB, blankPanel, ncol=1, nrow=1, widths=c(.8,4), heights=c(4))
+        p1 <- gridExtra::arrangeGrob(blankPanel, gB, blankPanel, ncol=1, nrow=1)
     } else {
-        p1 <- gridExtra::arrangeGrob(blankPanel, gB, blankPanel, ncol=2, nrow=3, widths=c(.8,4), heights=c(1,4,1.2))
+        p1 <- gridExtra::arrangeGrob(blankPanel, gB, blankPanel, ncol=1, nrow=1)
     }
 
     return(p1)
