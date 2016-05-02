@@ -270,7 +270,7 @@ waterfall <- function(x, mainRecurCutoff=0, mainGrid=TRUE, mainXlabel=FALSE,
     # Decide what to output
     if(!exists("pA", inherits=FALSE))
     {
-        pA <- waterfall_align(p2, p1, p3)
+        pA <- waterfall_align(p1)
     }
     dataOut <- list("main"=data_frame,
                     "mutation_count"=data_frame2,
