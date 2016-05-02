@@ -55,3 +55,37 @@ waterfall_align <- function(p2, p1, p3, p4)
 
     return(p1)
 }
+
+waterfall_align2 <- function(p1)
+{
+    # define the ggplot's as grobs and create a blank plot
+    # gA <- suppressWarnings(ggplot2::ggplotGrob(p2))
+    gB <- ggplot2::ggplotGrob(p1)
+    # gC <- ggplot2::ggplotGrob(p3)
+    blankPanel <- grid::grid.rect(gp=grid::gpar(col="white"))
+
+    # Adjust the grob widths so p1 and p3 plots line up
+    if(!missing(p4))
+    {
+        maxwidth = grid::unit.pmax(gB$widths[2:5,])
+        gB$widths[2:5] <- as.list(maxwidth)
+    } else {
+        maxwidth = grid::unit.pmax(gB$widths[2:5,])
+        gB$widths[2:5] <- as.list(maxwidth)
+    }
+
+    # Adjust the grob heights so p1, and p2 plots line up
+    maxheight = grid::unit.pmax(gB$heights[2:5,])
+    gB$heights[2:5] <- as.list(maxheight)
+
+    # plot the grobs with grid.arrange
+    if(!missing(p4))
+    {
+        p1 <- gridExtra::arrangeGrob(blankPanel, gB, blankPanel, ncol=1, nrow=1, widths=c(.8,4), heights=c(1,4,1.2))
+    } else {
+        p1 <- gridExtra::arrangeGrob(blankPanel, gB, blankPanel, ncol=1, nrow=1, widths=c(.8,4), heights=c(1,4,1.2))
+    }
+
+    return(p1)
+}
+
